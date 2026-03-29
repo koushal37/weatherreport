@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-950 text-white">
+    <div class="wb z-50 fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center cursor-pointer"> 
+        <div class="bg-gray-900 rounded-2xl p-10 flex flex-col gap-8 h-[370px] w-[450px]">
+            <div class="text-white text-[30px] font-bold text-center">Welcome!!!</div>
+            <div class="my-auto text-white text-5xl font-bold text-center">Weather Report</div>
+            <div class="text-gray-400 text-sm text-right">*press any where to continue</div>
+        </div>
+    </div>
+    
+    <div class="flex  px-6 py-3  gap-3">
+        <div class ="wr text-[20px] pt-1">Weather Report</div>
+        <div class ="c pt-1 pl-4" ><input class="city px-60 py-1  rounded-full bg-gray-800 text-white border border-gray-600 outline-none text-lg" list="city-list" type ="text" placeholder="Enter the city here:"/>
+                <datalist id="city-list">
+                        <option value="visakhapatnam">
+                        <option value="Hyderabad">
+                        <option value="Rayagada">
+                        <option value="Bhubaneswar">
+                        <option value="Bangalore">
+                        <option value="Bhopal">
+                        <option value="Pune">
+                    </datalist>
+        </div>
+        <button id="sb" class="px-6 py-2 rounded-full bg-600 hover:bg-blue-700 text-xl">🔍</button>
+    </div>
+
+    <br>
+    
+    <div id="search-result" class="hidden relative p-6  shadow-lg max-w-2xl overflow-hidden">
+                
+        <img id="-img" src="" class="absolute inset-0 w-full h-full object-cover opacity-80">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative text-white font-sans space-y-1">
+        <h2 id="cn" class="text-xl font-semibold mb-2">Mumbai</h2>
+        <p id="longitude">longitude</p>
+        <p id="latitude">latitude</p>
+        <p id="ww">weather</p>
+        <p id="t">Temp</p>
+        <p id="tfl">Feels like</p>
+        <p id="h">Humidity</p>
+        <p id="w">wind</p>
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class=" grid grid-cols-2 gap-4 mx-20 p-6 text-black ">
+
+       
+            <div class="d-box relative p-6 rounded-lg shadow-lg max-w-2xl overflow-hidden">
+                    <img src="./images/download.jpeg" class="absolute inset-0 w-full h-full object-cover">
+                    <img id="d-img" src="" class="absolute inset-0 w-full h-full object-cover opacity-80">
+                    <div class="absolute inset-0 bg-black/50"></div>
+                    <div class="relative text-white font-sans space-y-1">
+                        <h2 id="dcn" class="text-xl font-semibold mb-2">Delhi</h2>
+                        <p id="dlongitude">longitude</p>
+                        <p id="dlatitude">latitude</p>
+                        <p id="dww">weather</p>
+                        <p id="dt">Temp</p>
+                        <p id="dtfl">Feels like</p>
+                        <p id="dh">Humidity</p>
+                        <p id="dw">wind</p>
+                    </div>
+            </div>
+           
+            
+            
+            
+            <div class="m-box relative p-6 rounded-lg shadow-lg max-w-2xl overflow-hidden">
+                <img src="./images/mumbai.jpeg" class="absolute inset-0 w-full h-full object-cover">
+                <img id="m-img" src="" class="absolute inset-0 w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 bg-black/50"></div>
+                <div class="relative text-white font-sans space-y-1">
+                    <h2 id="mcn" class="text-xl font-semibold mb-2">Mumbai</h2>
+                    <p id="mlongitude">longitude</p>
+                    <p id="mlatitude">latitude</p>
+                    <p id="mww">weather</p>
+                    <p id="mt">Temp</p>
+                    <p id="mtfl">Feels like</p>
+                    <p id="mh">Humidity</p>
+                    <p id="mw">wind</p>
+                </div>
+            </div>
+
+            
+      
+           <div class="c-box relative p-6 rounded-lg shadow-lg max-w-2xl overflow-hidden">
+                <img src="./images/chennai.jpeg" class="absolute inset-0 w-full h-full object-cover">
+                <img id="c-img" src="" class="absolute inset-0 w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 bg-black/50"></div>
+                <div class="relative text-white font-sans space-y-1">
+                    <h2 id="ccn" class="text-xl font-semibold mb-2">Chennai</h2>
+                    <p id="clongitude">longitude</p>
+                    <p id="clatitude">latitude</p>
+                    <p id="cww">weather</p>
+                    <p id="ct">Temp</p>
+                    <p id="ctfl">Feels like</p>
+                    <p id="ch">Humidity</p>
+                    <p id="cw">wind</p>
+                </div>
+            </div>
+           
+           
+           
+            <div class="k-box relative p-6 rounded-lg shadow-lg max-w-2xl overflow-hidden">
+                <img src="./images/kolkata.jpeg" class="absolute inset-0 w-full h-full object-cover">
+                <img id="k-img" src="" class="absolute inset-0 w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 bg-black/50"></div>
+                <div class="relative text-white font-sans space-y-1">
+                    <h2 id="kcn" class="text-xl font-semibold mb-2">Kolkata</h2>
+                    <p id="klongitude">longitude</p>
+                    <p id="klatitude">latitude</p>
+                    <p id="kww">weather</p>
+                    <p id="kt">Temp</p>
+                    <p id="ktfl">Feels like</p>
+                    <p id="kh">Humidity</p>
+                    <p id="kw">wind</p>
+                </div>
+            </div>
+
+           
+        
+
+    </div>
+
+   
+   
+    
+    <script src="weather.js"></script>   
+
+</body>
+</html>
+
+
+
+
